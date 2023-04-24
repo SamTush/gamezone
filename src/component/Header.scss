@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap');
+
 $primary-color: #07070c;
-$tertiary-color: #171926;
+$tertiary-color: #a10020;
 $secondary-color: #f7f9f9;
 
 header {
@@ -11,6 +13,13 @@ header {
     div {
       .navbar-brand {
         color: $secondary-color;
+        font-family: 'Bruno Ace SC', cursive;
+
+        span {
+          color: $tertiary-color;
+          font-size: 25px;
+          font-family: 'Bruno Ace SC', cursive;
+        }
       }
     }
   }

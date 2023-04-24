@@ -6,6 +6,10 @@ $secondary-color: #f7f9f9;
 section {
   padding: 15px 12px;
 
+  img {
+    width: 98%;
+  }
+
   .carousel {
     form {
       .input-group {
@@ -26,8 +30,14 @@ section {
       padding: 3px;
 
       .inner-container {
-        background-color: $secondary-color;
-        height: 100px;
+        background-color: $tertiary-color-light;
+        color: $secondary-color;
+        padding: 5px 5px 1px 5px;
+        border-radius: 4px;
+
+        img {
+          width: 100%;
+        }
       }
     }
   }
