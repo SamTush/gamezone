@@ -1,0 +1,17 @@
+$primary-color: #07070c;
+$tertiary-color: #171926;
+$secondary-color: #f7f9f9;
+
+header {
+  nav {
+    background-color: $primary-color;
+    display: flex;
+    justify-content: center;
+
+    div {
+      .navbar-brand {
+        color: $secondary-color;
+      }
+    }
+  }
+}

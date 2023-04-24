@@ -1,0 +1,34 @@
+$primary-color: #07070c;
+$tertiary-color: #171926;
+$tertiary-color-light: #404663;
+$secondary-color: #f7f9f9;
+
+section {
+  padding: 15px 12px;
+
+  .carousel {
+    form {
+      .input-group {
+        input {
+          background-color: $tertiary-color-light;
+          border: 1px solid $tertiary-color-light;
+        }
+      }
+    }
+  }
+
+  .main-section {
+    hr {
+      color: $secondary-color;
+    }
+
+    .col-6 {
+      padding: 3px;
+
+      .inner-container {
+        background-color: $secondary-color;
+        height: 100px;
+      }
+    }
+  }
+}

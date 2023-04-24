@@ -1,5 +1,10 @@
+$primary-color: #121420;
+$tertiary-color: #171926;
+$secondary-color: #f7f9f9;
+
 .App {
   text-align: center;
-  background-color: black;
   width: 390px;
+  height: 100vh;
+  background-color: $tertiary-color;
 }
