@@ -1,22 +1,27 @@
 import './Details.scss';
-import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useParams, Link } from 'react-router-dom';
 import { FaChevronLeft, FaGamepad } from 'react-icons/fa';
 import { AiFillChrome, AiFillWindows } from 'react-icons/ai';
+import { fetchGames } from '../redux/games/gamesSlice';
 
-const Detailer = () => {
-  const item = {
-    id: 251,
-    title: 'The Lord of the Rings Online',
-    thumbnail: 'https://www.freetogame.com/g/251/thumbnail.jpg',
-    short_description: "A free to play MMORPG set in the world of J.R.R. Tolkien's classic fantasy saga.",
-    game_url: 'https://www.freetogame.com/open/lotro',
-    genre: 'MMORPG',
-    platform: 'PC (Windows)',
-    publisher: 'Warner Bros. Interactive Entertainment',
-    developer: 'Turbine, Inc.',
-    release_date: '2001-04-24',
-    freetogame_profile_url: 'https://www.freetogame.com/lotro',
-  };
+const Details = () => {
+  const { gameId } = useParams();
+  const { currentGame } = useSelector((state) => state.games);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchGames(gameId));
+  }, [dispatch, gameId]);
+
+  if (!currentGame) {
+    return (
+      <div>
+        <h1>Loading...</h1>
+      </div>
+    );
+  }
 
   const platformIcons = {
     'PC (Windows)': <AiFillWindows size={25} />,
@@ -26,7 +31,7 @@ const Detailer = () => {
   return (
     <>
       <section>
-        <img src="https://www.freetogame.com/g/540/thumbnail.jpg" alt="banner" />
+        <img src={currentGame.thumbnail} alt="banner" />
         <div className="container">
           <div className="row">
             <Link to="/">
@@ -37,40 +42,38 @@ const Detailer = () => {
             </Link>
             <div className="col mt-3 desc">
               <h2>
-                Enlisted
+                {currentGame.title}
                 <span>
                   <br />
-                  Shooter
+                  {currentGame.genre}
                 </span>
               </h2>
               <p>
-                Get ready to command your own World War II
-                military squad in Gaijin and Darkflow Software’s
-                MMO squad-based shooter Enlisted.
+                {currentGame.short_description}
               </p>
               <div className="row">
                 <div className="col col-6">
                   <span>platform</span>
                   <br />
-                  {platformIcons[item.platform] || null}
+                  {platformIcons[currentGame.platform] || null}
                 </div>
                 <div className="col col-6">
                   <span>release_date:</span>
                   <br />
-                  2021-04-08
+                  {currentGame.release_date}
                 </div>
                 <div className="col col-6">
                   <span>publisher</span>
                   <br />
-                  Gaijin Entertainment
+                  {currentGame.publisher}
                 </div>
                 <div className="col col-6">
                   <span>developer</span>
                   <br />
-                  Darkflow Software
+                  {currentGame.developer}
                 </div>
                 <div className="col col-12 d-flex justify-content-center">
-                  <a href="https://www.freetogame.com/open/enlisted">
+                  <a href={currentGame.game_url}>
                     <FaGamepad size={50} />
                   </a>
                 </div>
@@ -83,4 +86,4 @@ const Detailer = () => {
   );
 };
 
-export default Detailer;
+export default Details;
