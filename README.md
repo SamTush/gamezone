@@ -47,6 +47,7 @@
   </ul>
 </details>
 
+<details>
   <summary>Redux</summary>
   <ul>
     <li><a href="https://redux-toolkit.js.org">Redux</a></li>
