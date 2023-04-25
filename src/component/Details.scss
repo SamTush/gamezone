@@ -1,0 +1,50 @@
+$primary-color: #07070c;
+$tertiary-color: #737395;
+$tertiary-color-light: #8f8fb6;
+$tertiary-color-dark: #3e3e63;
+$tertiary-color-red: #a10020;
+$secondary-color: #f7f9f9;
+
+section {
+  color: $secondary-color;
+  text-align: start;
+
+  a {
+    color: $secondary-color;
+    text-decoration: none;
+    line-height: 15px;
+  }
+
+  p {
+    color: $tertiary-color;
+  }
+
+  .link {
+    background-color: $tertiary-color-red;
+    color: $secondary-color;
+    padding: 12px 18px 12px 13px;
+    border-radius: 4px;
+    width: fit-content;
+  }
+
+  .desc {
+    h2 {
+      span {
+        color: $tertiary-color-dark;
+        font-size: 0.7em;
+      }
+    }
+
+    .col {
+      height: 70px;
+
+      span {
+        color: $tertiary-color-light;
+      }
+
+      a:hover {
+        color: $tertiary-color-red;
+      }
+    }
+  }
+}
