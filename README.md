@@ -5,6 +5,8 @@
   <br/>
 
   <h3><b>gameZone</b></h3>
+  
+  <div margin-left="100"><table><tr><td width="33%" margin-left="100"><img src="screenOne.png" alt="logo" width="390"  height="auto" /><td width="33%"> <img src="screenTwo.png" alt="logo" width="390"  height="auto" /></td><td width="33%" margin-left="100"><img src="screenThree.png" alt="logo" width="390"  height="auto" /></td></tr></table></div>
 
 </div>
 
