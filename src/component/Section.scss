@@ -12,11 +12,16 @@ section {
   }
 
   .carousel {
+    .carousel-image {
+      transition: opacity 0.5s ease-in-out;
+    }
+
     form {
       .input-group {
         input {
           background-color: $tertiary-color-light;
           border: 1px solid $tertiary-color-light;
+          color: $secondary-color;
         }
 
         input::placeholder {

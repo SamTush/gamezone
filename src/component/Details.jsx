@@ -1,22 +1,37 @@
 import './Details.scss';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { FaChevronLeft, FaGamepad } from 'react-icons/fa';
 import { AiFillChrome, AiFillWindows } from 'react-icons/ai';
 
-const Detailer = () => {
-  const item = {
-    id: 251,
-    title: 'The Lord of the Rings Online',
-    thumbnail: 'https://www.freetogame.com/g/251/thumbnail.jpg',
-    short_description: "A free to play MMORPG set in the world of J.R.R. Tolkien's classic fantasy saga.",
-    game_url: 'https://www.freetogame.com/open/lotro',
-    genre: 'MMORPG',
-    platform: 'PC (Windows)',
-    publisher: 'Warner Bros. Interactive Entertainment',
-    developer: 'Turbine, Inc.',
-    release_date: '2001-04-24',
-    freetogame_profile_url: 'https://www.freetogame.com/lotro',
-  };
+const Details = () => {
+  const { games, isLoading } = useSelector((state) => state.games);
+  const { id } = useParams();
+  const gameDetail = games.find((item) => item.id === parseInt(id, 10)) ?? {};
+
+  //   gameDetail = {
+  //     id: 17,
+  //     title: 'Entropia Universe',
+  //     thumbnail: 'https://www.freetogame.com/g/17/thumbnail.jpg',
+  //     short_description: 'A 3D
+  // MMO Multi Virtual World Real Cash Economy Experience with RPG elements. ',
+  //     game_url: 'https://www.freetogame.com/open/entropia-universe',
+  //     genre: 'MMORPG',
+  //     platform: 'Web Browser',
+  //     publisher: 'MindArk',
+  //     developer: 'MindArk',
+  //     release_date: '2003-01-30',
+  //     freetogame_profile_url: 'https://www.freetogame.com/entropia-universe',
+  //   };
+
+  if (isLoading) {
+    return (
+      <div>
+        <h1>Loading...</h1>
+      </div>
+    );
+  }
 
   const platformIcons = {
     'PC (Windows)': <AiFillWindows size={25} />,
@@ -26,7 +41,7 @@ const Detailer = () => {
   return (
     <>
       <section>
-        <img src="https://www.freetogame.com/g/540/thumbnail.jpg" alt="banner" />
+        <img src={gameDetail.thumbnail} alt="banner" />
         <div className="container">
           <div className="row">
             <Link to="/">
@@ -37,40 +52,38 @@ const Detailer = () => {
             </Link>
             <div className="col mt-3 desc">
               <h2>
-                Enlisted
+                {gameDetail.title}
                 <span>
                   <br />
-                  Shooter
+                  {gameDetail.genre}
                 </span>
               </h2>
               <p>
-                Get ready to command your own World War II
-                military squad in Gaijin and Darkflow Software’s
-                MMO squad-based shooter Enlisted.
+                {gameDetail.short_description}
               </p>
               <div className="row">
                 <div className="col col-6">
                   <span>platform</span>
                   <br />
-                  {platformIcons[item.platform] || null}
+                  {platformIcons[gameDetail.platform] || null}
                 </div>
                 <div className="col col-6">
                   <span>release_date:</span>
                   <br />
-                  2021-04-08
+                  {gameDetail.release_date}
                 </div>
                 <div className="col col-6">
                   <span>publisher</span>
                   <br />
-                  Gaijin Entertainment
+                  {gameDetail.publisher}
                 </div>
                 <div className="col col-6">
                   <span>developer</span>
                   <br />
-                  Darkflow Software
+                  {gameDetail.developer}
                 </div>
                 <div className="col col-12 d-flex justify-content-center">
-                  <a href="https://www.freetogame.com/open/enlisted">
+                  <a href={gameDetail.game_url}>
                     <FaGamepad size={50} />
                   </a>
                 </div>
@@ -83,4 +96,4 @@ const Detailer = () => {
   );
 };
 
-export default Detailer;
+export default Details;
