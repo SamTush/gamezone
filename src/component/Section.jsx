@@ -52,7 +52,7 @@ const Section = () => {
         <div className="row">
           {filteredGames.map((item) => (
             <div className="col col-6" key={item.id}>
-              <Link to={`game/${item.id}`}>
+              <Link to={`/game/${item.id}`}>
                 <div className="inner-container">
                   <img src={item.thumbnail} alt="" />
                   <p className="ps-2 mt-1">{item.title}</p>
