@@ -6,24 +6,9 @@ import { FaChevronLeft, FaGamepad } from 'react-icons/fa';
 import { AiFillChrome, AiFillWindows } from 'react-icons/ai';
 
 const Details = () => {
-  const { games, isLoading } = useSelector((state) => state.games);
-  const { id } = useParams();
-  const gameDetail = games.find((item) => item.id === parseInt(id, 10)) ?? {};
-
-  //   gameDetail = {
-  //     id: 17,
-  //     title: 'Entropia Universe',
-  //     thumbnail: 'https://www.freetogame.com/g/17/thumbnail.jpg',
-  //     short_description: 'A 3D
-  // MMO Multi Virtual World Real Cash Economy Experience with RPG elements. ',
-  //     game_url: 'https://www.freetogame.com/open/entropia-universe',
-  //     genre: 'MMORPG',
-  //     platform: 'Web Browser',
-  //     publisher: 'MindArk',
-  //     developer: 'MindArk',
-  //     release_date: '2003-01-30',
-  //     freetogame_profile_url: 'https://www.freetogame.com/entropia-universe',
-  //   };
+  const { isLoading } = useSelector((state) => state.games);
+  const { gameId } = useParams(); // retrieve the gameId parameter from the URL
+  const game = useSelector((state) => state.games.games.find((game) => game.id === Number(gameId)));
 
   if (isLoading) {
     return (
@@ -41,7 +26,7 @@ const Details = () => {
   return (
     <>
       <section>
-        <img src={gameDetail.thumbnail} alt="banner" />
+        <img src={game.thumbnail} alt="banner" />
         <div className="container">
           <div className="row">
             <Link to="/">
@@ -52,38 +37,38 @@ const Details = () => {
             </Link>
             <div className="col mt-3 desc">
               <h2>
-                {gameDetail.title}
+                {game.title}
                 <span>
                   <br />
-                  {gameDetail.genre}
+                  {game.genre}
                 </span>
               </h2>
               <p>
-                {gameDetail.short_description}
+                {game.short_description}
               </p>
               <div className="row">
                 <div className="col col-6">
                   <span>platform</span>
                   <br />
-                  {platformIcons[gameDetail.platform] || null}
+                  {platformIcons[game.platform] || null}
                 </div>
                 <div className="col col-6">
                   <span>release_date:</span>
                   <br />
-                  {gameDetail.release_date}
+                  {game.release_date}
                 </div>
                 <div className="col col-6">
                   <span>publisher</span>
                   <br />
-                  {gameDetail.publisher}
+                  {game.publisher}
                 </div>
                 <div className="col col-6">
                   <span>developer</span>
                   <br />
-                  {gameDetail.developer}
+                  {game.developer}
                 </div>
                 <div className="col col-12 d-flex justify-content-center">
-                  <a href={gameDetail.game_url}>
+                  <a href={game.game_url}>
                     <FaGamepad size={50} />
                   </a>
                 </div>
