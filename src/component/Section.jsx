@@ -14,13 +14,9 @@ const Section = () => {
     dispatch(fetchGames());
   }, [dispatch]);
 
-  const filteredGames = games.filter((game) => {
-    console.log('90');
-
-    return (
-      game.title.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-  });
+  const filteredGames = games.filter((game) => (
+    game.title.toLowerCase().includes(searchTerm.toLowerCase())
+  ));
 
   if (isLoading) {
     return (

@@ -1,21 +1,31 @@
 import './Details.scss';
-import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { FaChevronLeft, FaGamepad } from 'react-icons/fa';
 import { AiFillChrome, AiFillWindows } from 'react-icons/ai';
-import { fetchGames } from '../redux/games/gamesSlice';
 
 const Details = () => {
-  const { gameId } = useParams();
-  const { currentGame } = useSelector((state) => state.games);
-  const dispatch = useDispatch();
+  const { games, isLoading } = useSelector((state) => state.games);
+  const { id } = useParams();
+  const gameDetail = games.find((item) => item.id === parseInt(id, 10)) ?? {};
 
-  useEffect(() => {
-    dispatch(fetchGames(gameId));
-  }, [dispatch, gameId]);
+  //   gameDetail = {
+  //     id: 17,
+  //     title: 'Entropia Universe',
+  //     thumbnail: 'https://www.freetogame.com/g/17/thumbnail.jpg',
+  //     short_description: 'A 3D
+  // MMO Multi Virtual World Real Cash Economy Experience with RPG elements. ',
+  //     game_url: 'https://www.freetogame.com/open/entropia-universe',
+  //     genre: 'MMORPG',
+  //     platform: 'Web Browser',
+  //     publisher: 'MindArk',
+  //     developer: 'MindArk',
+  //     release_date: '2003-01-30',
+  //     freetogame_profile_url: 'https://www.freetogame.com/entropia-universe',
+  //   };
 
-  if (!currentGame) {
+  if (isLoading) {
     return (
       <div>
         <h1>Loading...</h1>
@@ -31,7 +41,7 @@ const Details = () => {
   return (
     <>
       <section>
-        <img src={currentGame.thumbnail} alt="banner" />
+        <img src={gameDetail.thumbnail} alt="banner" />
         <div className="container">
           <div className="row">
             <Link to="/">
@@ -42,38 +52,38 @@ const Details = () => {
             </Link>
             <div className="col mt-3 desc">
               <h2>
-                {currentGame.title}
+                {gameDetail.title}
                 <span>
                   <br />
-                  {currentGame.genre}
+                  {gameDetail.genre}
                 </span>
               </h2>
               <p>
-                {currentGame.short_description}
+                {gameDetail.short_description}
               </p>
               <div className="row">
                 <div className="col col-6">
                   <span>platform</span>
                   <br />
-                  {platformIcons[currentGame.platform] || null}
+                  {platformIcons[gameDetail.platform] || null}
                 </div>
                 <div className="col col-6">
                   <span>release_date:</span>
                   <br />
-                  {currentGame.release_date}
+                  {gameDetail.release_date}
                 </div>
                 <div className="col col-6">
                   <span>publisher</span>
                   <br />
-                  {currentGame.publisher}
+                  {gameDetail.publisher}
                 </div>
                 <div className="col col-6">
                   <span>developer</span>
                   <br />
-                  {currentGame.developer}
+                  {gameDetail.developer}
                 </div>
                 <div className="col col-12 d-flex justify-content-center">
-                  <a href={currentGame.game_url}>
+                  <a href={gameDetail.game_url}>
                     <FaGamepad size={50} />
                   </a>
                 </div>
