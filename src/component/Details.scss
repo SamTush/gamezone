@@ -41,10 +41,26 @@ section {
       span {
         color: $tertiary-color-light;
       }
+    }
+  }
 
-      a:hover {
-        color: $tertiary-color-red;
-      }
+  .play-float {
+    position: fixed;
+    bottom: 40px;
+
+    .play {
+      background-color: $tertiary-color-light;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      height: 70px;
+      width: 70px;
+    }
+
+    a:hover {
+      color: $tertiary-color-red;
+      opacity: 1;
     }
   }
 }
