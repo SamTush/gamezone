@@ -21,6 +21,10 @@ header {
           font-family: 'Bruno Ace SC', cursive;
         }
       }
+
+      .navbar-brand:hover {
+        color: $secondary-color;
+      }
     }
   }
 }
