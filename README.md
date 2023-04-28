@@ -125,7 +125,7 @@ To run the project, execute the following command:
 To run tests, run the following command:
 
 ```
-  npm run test
+  npm test
 ```
 
 ### Deployment
