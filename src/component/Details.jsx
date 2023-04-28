@@ -27,7 +27,7 @@ const Details = () => {
     <>
       <section>
         <img src={game.thumbnail} alt="banner" />
-        <div className="container-fluid">
+        <div className="container">
           <div className="row">
             <Link to="/">
               <div className="col col-3 d-flex align-items-center link mt-3">
@@ -35,7 +35,7 @@ const Details = () => {
                 <span className="ms-2">back</span>
               </div>
             </Link>
-            <div className="col mt-3 mb-4 desc">
+            <div className="col mt-3 desc">
               <h2>
                 {game.title}
                 <span>
@@ -67,16 +67,12 @@ const Details = () => {
                   <br />
                   {game.developer}
                 </div>
+                <div className="col col-12 d-flex justify-content-center">
+                  <a href={game.game_url}>
+                    <FaGamepad size={50} />
+                  </a>
+                </div>
               </div>
-            </div>
-          </div>
-        </div>
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col col-11 play-float d-flex justify-content-end">
-              <a className="play" href={game.game_url}>
-                <FaGamepad className="icon" size={50} />
-              </a>
             </div>
           </div>
         </div>

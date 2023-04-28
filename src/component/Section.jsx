@@ -55,7 +55,7 @@ const Section = () => {
               <Link to={`/game/${item.id}`}>
                 <div className="inner-container">
                   <img src={item.thumbnail} alt="" />
-                  <p className="ps-1 mt-1 mb-1">{item.title}</p>
+                  <p className="ps-2 mt-1">{item.title}</p>
                 </div>
               </Link>
             </div>
