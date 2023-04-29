@@ -19,6 +19,7 @@
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
   - [🚀 Live Demo](#live-demo)
+  - [🔗 Demo video](#demo-video)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -84,6 +85,14 @@
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 - [gameZone](https://game-zone.onrender.com)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- DEMO VIDEO -->
+
+## 🔗 Demo video <a name="demo-video"></a>
+
+- [loom demo video](https://www.loom.com/share/b17efd5899ce4057a5f8ea60659d4eea)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
