@@ -7,7 +7,7 @@ import { AiFillChrome, AiFillWindows } from 'react-icons/ai';
 
 const Details = () => {
   const { isLoading } = useSelector((state) => state.games);
-  const { gameId } = useParams(); // retrieve the gameId parameter from the URL
+  const { gameId } = useParams();
   const game = useSelector((state) => state.games.games.find((game) => game.id === Number(gameId)));
 
   if (isLoading) {

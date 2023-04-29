@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer component renders correctly 1`] = `
+<footer>
+  <div
+    className="container"
+  >
+    <hr />
+    <img
+      alt="Samson Mbaziira"
+      className="mt-3"
+      src="logo-White.png"
+    />
+    <div
+      className="row mt-4"
+    >
+      <div
+        className="col col-6"
+      >
+        Microverse React-redux capstone project
+      </div>
+      <div
+        className="col col-6"
+      >
+        copyright ©  
+        2023
+        <br />
+        Allright reserved.
+      </div>
+    </div>
+  </div>
+</footer>
+`;
