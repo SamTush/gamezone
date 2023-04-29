@@ -27,7 +27,7 @@ const Details = () => {
     <>
       <section>
         <img src={game.thumbnail} alt="banner" />
-        <div className="container-fluid">
+        <div className="container-fluid d-flex justify-content-center">
           <div className="row">
             <Link to="/">
               <div className="col col-3 d-flex align-items-center link mt-3">
