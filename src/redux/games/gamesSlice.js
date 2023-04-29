@@ -1,6 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
+export {};
+
 const options = {
   method: 'GET',
   url: 'https://free-to-play-games-database.p.rapidapi.com/api/filter',
