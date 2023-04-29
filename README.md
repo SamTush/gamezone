@@ -92,7 +92,7 @@
 
 ## 🔗 Demo video <a name="demo-video"></a>
 
-- [loom demo video](https://www.loom.com/share/b17efd5899ce4057a5f8ea60659d4eea)
+- [loom demo video](https://www.loom.com/share/133364ea4425464d9422e90c56cc2f96)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
