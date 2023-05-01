@@ -75,7 +75,10 @@ const Details = () => {
           <div className="row">
             <div className="col col-11 play-float d-flex justify-content-end">
               <a className="play" href={game.game_url}>
-                <FaGamepad className="icon" size={50} />
+                <FaGamepad
+                  className="icon"
+                  size={50}
+                />
               </a>
             </div>
           </div>
