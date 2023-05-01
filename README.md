@@ -185,7 +185,7 @@ If you like this project, feel free to give it a star and contribute to make it 
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Microverse for the opportunity to be part of the wonderful community and [Nelson Sakwa](https://www.behance.net/sakwadesignstudio) the author of the original design.
+I would like to thank Microverse for the opportunity to be part of the wonderful community.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
